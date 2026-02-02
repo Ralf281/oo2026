@@ -1,0 +1,1 @@
+Võimaldada läbi front-endi sportlasi ja tulemusi lisada.

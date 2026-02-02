@@ -1,0 +1,7 @@
+Lehekülgede kaupa liikumise võimalus kümnevõistluses.
+
+Võimaldada riikide kaupa sportlasi filtreerida.
+
+Võimaldada sportlasi tulemuse alusel sorteerida.
+
+Kõik peavad toimuma läbi back-endi (sorteerida/filtreerida ei tohi front-endis)

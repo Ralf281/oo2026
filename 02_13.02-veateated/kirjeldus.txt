@@ -1,0 +1,5 @@
+Loo uus rakendus.
+
+Võimalda näha (GET) ja lisada autosid (POST).
+
+Loo vähemalt 5 erinevat veateadet, mis annavad auto lisamisel veateate.

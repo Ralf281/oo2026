@@ -1,0 +1,9 @@
+Loo uus rakendus, nimega decathlon (kümnevõistlus).
+
+Võimalda lisada uusi sportlasi.
+
+Anna sobivad veateated.
+
+Võimalda lisada igale sportlasele tulemus (kui lisad tulemuse,siis koos sportlasega).
+
+Eraldi API endpoint peab tagastama sportlase kõigi juba lisatud tulemuste kogusummat.

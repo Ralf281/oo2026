@@ -1,0 +1,6 @@
+https://mockapi.io
+
+Tee endale 2 eraldi võltsandmete tabelit:
+Kohtunikud + Võistluste asukohad.
+
+Tee neile API päring läbi back-endi. Ei pea front-endis välja kuvama.
