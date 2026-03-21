@@ -7,16 +7,24 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@CrossOrigin(origins = "*")
+@CrossOrigin(origins = "*") // turvaviga, päris arendustes seda ei teeks
+// @CrossOrigin(origins = "http://localhost:5173").
+// @CrossOrigin(origins = "https://www.arvutitark.ee").
 @RestController
 public class ProductController {
-
-    // localhost:2004/products
-    // application.properties server.port=2004
+    // localhost:8080/products
+    // application.properties  server.port=8090
 //    @GetMapping("products")
 //    public String helloworld(){
 //        return "Hello World";
 //    }
+
+    // 1xx -> (harva) informatiivne
+    // 2xx -> õnnestuv
+    // 3xx -> (harva) redirect
+    // 4xx -> päringu tegija (client error / front-end error)
+    // 5xx -> päringu vastuvõtja viga (server error)
+
     @Autowired
     private ProductRepository productRepository;
 
@@ -32,8 +40,8 @@ public class ProductController {
 
     @DeleteMapping("products/{id}")
     public List<Product> deleteProduct(@PathVariable Long id){
-        productRepository.deleteById(id);
-        return productRepository.findAll();
+        productRepository.deleteById(id); // kustutan
+        return productRepository.findAll(); // uuenenud seis
     }
 
     @PostMapping("products")
@@ -41,19 +49,22 @@ public class ProductController {
         if (product.getId()!=null){
             throw new RuntimeException("Cannot add with ID");
         }
-        productRepository.save(product);
-        return productRepository.findAll();
+        productRepository.save(product); // siin salvestab
+        return productRepository.findAll(); // siin on uuenenud seis
     }
 
     @PutMapping("products")
     public List<Product> editProduct(@RequestBody Product product){
+        // File -> Settings -> Plugins -> Lombok -> Install
         if (product.getId()==null){
             throw new RuntimeException("Cannot edit without ID");
         }
         if (!productRepository.existsById(product.getId())){
             throw new RuntimeException("Product ID does not exist");
         }
-        productRepository.save(product);
-        return productRepository.findAll();
+        productRepository.save(product); // siin salvestab
+        return productRepository.findAll(); // siin on uuenenud seis
     }
+
+
 }

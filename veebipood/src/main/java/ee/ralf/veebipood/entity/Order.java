@@ -32,4 +32,3 @@ public class Order { // ERROR: syntax error at or near "order"
     @OneToMany(cascade = CascadeType.ALL)
     private List<OrderRow> orderRows;
 }
-

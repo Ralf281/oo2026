@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@CrossOrigin(origins = "*")
 @RestController
 @AllArgsConstructor
 public class OrderController {
@@ -35,8 +36,8 @@ public class OrderController {
     // localhost:8080/orders?personId=1
     @PostMapping("orders")
     public Order addOrder(@RequestParam Long personId,
-                          @RequestParam(required = false) String parcelMachine,
-                          @RequestBody List<OrderRowDto> orderRows){
+                                @RequestParam(required = false) String parcelMachine,
+                                @RequestBody List<OrderRowDto> orderRows){
         return orderService.saveOrder(personId, parcelMachine, orderRows); // siin salvestab
         //return orderRepository.findAll(); // siin on uuenenud seis
     }

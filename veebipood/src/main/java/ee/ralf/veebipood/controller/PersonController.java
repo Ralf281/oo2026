@@ -9,12 +9,16 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@CrossOrigin(origins = "*")
 @RestController
 public class PersonController {
 
     @Autowired
     private PersonRepository personRepository;
 
+    // Dependency Injection. Kui luuakse see klass (PersonController), seotakse ära samal ajal
+    // temaga kõik allolevad muutujad
+    // Injectiga võib ka läbi ka constructorite
     @Autowired
     private PersonService personService;
 
@@ -25,8 +29,8 @@ public class PersonController {
 
     @DeleteMapping("persons/{id}")
     public List<Person> deletePerson(@PathVariable Long id){
-        personRepository.deleteById(id);
-        return personRepository.findAll();
+        personRepository.deleteById(id); // kustutan
+        return personRepository.findAll(); // uuenenud seis
     }
 
     @PostMapping("signup")
@@ -46,5 +50,4 @@ public class PersonController {
         }
         return dbPerson;
     }
-
 }

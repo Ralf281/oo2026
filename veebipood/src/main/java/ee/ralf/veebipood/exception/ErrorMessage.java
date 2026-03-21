@@ -1,6 +1,7 @@
 package ee.ralf.veebipood.exception;
 
 import lombok.Data;
+
 import java.util.Date;
 
 @Data // @Getter  @Setter  @NoArgsConstructor
